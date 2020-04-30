@@ -15,7 +15,8 @@ Include the concept of a user:
 - A post belongs to a user
 - A user can have many posts
 
-Here is an example schema:
+<details><summary>Here is an example schema.</summary>
+<p>
 
 ```js
 const User = new Schema(
@@ -39,3 +40,7 @@ const Post = new Schema(
   { timestamps: true }
 )
 ```
+```
+
+</p>
+</details>
