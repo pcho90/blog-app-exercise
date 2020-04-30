@@ -17,7 +17,7 @@ Include the concept of a user:
 
 Here is an example schema:
 
-```
+```js
 const User = new Schema(
   {
     username: { type: String, required: true },
@@ -28,7 +28,7 @@ const User = new Schema(
 )
 ```
 
-```
+```js
 const Post = new Schema(
   {
     title: { type: String, required: true },
