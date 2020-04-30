@@ -12,7 +12,7 @@ Your app should include the following:
 **Bonus**: 
 
 Include the concept of a user:
-- A "post" belongs to a user
+- A post belongs to a user
 - A user can have many posts
 
 Here is an example schema:
