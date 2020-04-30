@@ -40,9 +40,8 @@ const Post = new Schema(
   { timestamps: true }
 )
 ```
-```
 
 </p>
 </details>
 
-> Make sure to accomodate this schema in the express routes, controllers, and in your react app as well.
+> Make sure to accomodate this schema in the express routes, controllers, and in your react app as well
