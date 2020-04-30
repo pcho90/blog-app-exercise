@@ -44,3 +44,5 @@ const Post = new Schema(
 
 </p>
 </details>
+
+> Make sure to accomodate this schema in the express routes, controllers, and in your react app as well.
