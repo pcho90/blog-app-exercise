@@ -45,3 +45,12 @@ const Post = new Schema(
 </details>
 
 > Make sure to accomodate this schema in the express routes, controllers, and in your react app as well
+
+In your seed file you will have to:
+1. Create users
+2. Create posts and associate them with users
+3. Create the association between users and posts
+
+**Tips**
+- https://mongoosejs.com/docs/queries.html
+- https://mongoosejs.com/docs/populate.html
