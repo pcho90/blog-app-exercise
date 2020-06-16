@@ -2,13 +2,18 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const logger = require('morgan');
+
+const db = require('./db/connection');
 const postsRoutes = require('./routes/posts');
 const usersRoutes = require('./routes/users');
+
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
+app.use(logger('dev'));
 
 app.get('/', (req, res) => {
   console.log('Server.js listening on port 3000');
@@ -17,5 +22,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/posts', postsRoutes);
 app.use('/api/users', usersRoutes);
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.listen(PORT);
