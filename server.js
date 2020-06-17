@@ -6,8 +6,9 @@ const logger = require('morgan');
 const db = require('./db/connection');
 const postsRoutes = require('./routes/posts');
 const usersRoutes = require('./routes/users');
+const commentsRoutes = require('./routes/comments');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/posts', postsRoutes);
 app.use('/api/users', usersRoutes);
+app.use('/api/comments', commentsRoutes);
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 

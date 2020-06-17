@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.content-main {
+  width: 100%;
+}
+
+.content-subtitle {
+  display: flex;
+  justify-content: space-between;
+}

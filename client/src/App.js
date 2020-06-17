@@ -9,6 +9,7 @@ import Create from './views/Create/Create';
 import Edit from './views/Edit/Edit';
 import SignIn from './views/SignIn/SignIn';
 import Profile from './views/Profile/Profile';
+import PostDetail from './views/PostDetail/PostDetail';
 
 const App = () => {
   const { currentUser } = useContext(AuthContext);
@@ -20,11 +21,17 @@ const App = () => {
       <>
         <Route path='/create' component={Create} />
         <Route path='/profile' component={Profile} />
-        <Route path='/posts/:id' component={Edit} />
+        <Route path='/posts/:id/edit' component={Edit} />
+        <Route path='/posts/:id' component={PostDetail} />
       </>
     );
   } else {
-    routes = <Route path='/signin' component={SignIn} />;
+    routes = (
+      <>
+        <Route path='/signin' component={SignIn} />
+        <Route path='/posts/:id' component={PostDetail} />
+      </>
+    );
   }
 
   return (

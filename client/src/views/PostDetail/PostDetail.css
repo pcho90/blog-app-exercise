@@ -1,0 +1,17 @@
+.post-details {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+.original-post {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.original-subtitle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

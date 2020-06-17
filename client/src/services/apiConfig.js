@@ -1,12 +1,12 @@
-import axios from "axios";
+import axios from 'axios';
 
 let apiUrl;
 const apiUrls = {
-  production: "",
-  development: "http://localhost:3000/api",
+  production: '',
+  development: 'http://localhost:5000/api'
 };
 
-if (window.location.hostname === "localhost") {
+if (window.location.hostname === 'localhost') {
   apiUrl = apiUrls.development;
 } else {
   apiUrl = apiUrls.production;
@@ -14,6 +14,6 @@ if (window.location.hostname === "localhost") {
 
 const api = axios.create({
   baseURL: apiUrl
-})
+});
 
-export default api
+export default api;
