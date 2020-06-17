@@ -2,7 +2,7 @@ import axios from 'axios';
 
 let apiUrl;
 const apiUrls = {
-  production: '',
+  production: 'https://infinite-atoll-85496.herokuapp.com/api',
   development: 'http://localhost:5000/api'
 };
 
