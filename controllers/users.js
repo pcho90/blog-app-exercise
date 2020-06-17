@@ -14,6 +14,19 @@ const getUsers = async (req, res) => {
   }
 };
 
+const signInUser = async (req, res) => {
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username });
+    if (user && user.password === password) {
+      return res.json(user);
+    }
+    res.status(403).json({ message: 'could not sign in' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 const getUser = async (req, res) => {
   try {
     const { id } = req.params;
@@ -21,7 +34,7 @@ const getUser = async (req, res) => {
     if (user) {
       return res.json(user);
     }
-    res.status(404).json({ message: 'Could not find user.' });
+    res.status(404).json({ message: 'could not find user.' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -63,4 +76,11 @@ const deleteUser = async (req, res) => {
   }
 };
 
-module.exports = { getUsers, getUser, createUser, updateUser, deleteUser };
+module.exports = {
+  getUsers,
+  signInUser,
+  getUser,
+  createUser,
+  updateUser,
+  deleteUser
+};

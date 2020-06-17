@@ -1,23 +1,39 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import HomePage from "./components/Pages/HomePage/HomePage";
-import DetailsPage from "./components/Pages/Details-Page/Details-Page";
-import CreatePage from "./components/Pages/Create-Page/Create-Page";
-import PostPage from "./components/Pages/Post-Page/Post-Page";
-import { Route, Switch, Redirect } from "react-router-dom";
+import React, { useContext } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-function App() {
+import './App.css';
+
+import { AuthContext } from './contexts/auth';
+import Homepage from './views/Homepage/Homepage';
+import Create from './views/Create/Create';
+import Edit from './views/Edit/Edit';
+import SignIn from './views/SignIn/SignIn';
+import Profile from './views/Profile/Profile';
+
+const App = () => {
+  const { currentUser } = useContext(AuthContext);
+
+  let routes;
+
+  if (currentUser) {
+    routes = (
+      <>
+        <Route path='/create' component={Create} />
+        <Route path='/profile' component={Profile} />
+        <Route path='/posts/:id' component={Edit} />
+      </>
+    );
+  } else {
+    routes = <Route path='/signin' component={SignIn} />;
+  }
+
   return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/create" component={CreatePage} />
-        <Route path="/posts/:id" component={DetailsPage} />
-        <Redirect to="/" />
-      </Switch>
-    </div>
+    <Switch>
+      <Route exact path='/' component={Homepage} />
+      {routes}
+      <Redirect to='/' />
+    </Switch>
   );
-}
+};
 
 export default App;
