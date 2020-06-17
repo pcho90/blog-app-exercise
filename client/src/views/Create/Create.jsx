@@ -34,10 +34,21 @@ const Create = () => {
 
   return (
     <Layout>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input name='title' value={input.title} onChange={handleChange} />
-          <input name='content' value={input.content} onChange={handleChange} />
+      <div className='create-page'>
+        <form onSubmit={handleSubmit} className='create-form'>
+          <input
+            placeholder='title'
+            name='title'
+            value={input.title}
+            onChange={handleChange}
+          />
+          <textarea
+            placeholder='content'
+            rows='10'
+            name='content'
+            value={input.content}
+            onChange={handleChange}
+          />
           <button>Create</button>
         </form>
       </div>

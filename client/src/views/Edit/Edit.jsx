@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
+import './Edit.css';
+
 import { getPost, updatePost, deletePost } from '../../services/posts';
 import Layout from '../../components/Layout/Layout';
 
@@ -35,11 +37,19 @@ const Edit = () => {
 
   return (
     <Layout>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input name='title' value={input.title} onChange={handleChange} />
-          <input name='content' value={input.content} onChange={handleChange} />
-          <button>Create</button>
+      <div className='edit-body'>
+        <form className='edit-form' onSubmit={handleSubmit}>
+          <input
+            name='edit-title'
+            value={input.title}
+            onChange={handleChange}
+          />
+          <input
+            name='edit-content'
+            value={input.content}
+            onChange={handleChange}
+          />
+          <button>Save</button>
         </form>
         <button onClick={handleDelete}>Delete</button>
       </div>

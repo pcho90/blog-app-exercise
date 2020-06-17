@@ -8,8 +8,17 @@ db.on('error', console.error.bind(console, 'MongoDB connection error: '));
 const getComments = async (req, res) => {
   try {
     const { id } = req.params;
-    console.log(id);
     const comments = await Comment.find({ post: id });
+    res.json(comments);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+const getCommentsByUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const comments = await Comment.find({ user: id });
     res.json(comments);
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -65,5 +74,6 @@ module.exports = {
   getComments,
   createComment,
   updateComment,
-  deleteComment
+  deleteComment,
+  getCommentsByUser
 };

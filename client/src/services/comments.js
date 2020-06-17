@@ -9,6 +9,15 @@ export const getComments = async id => {
   }
 };
 
+export const getCommentsByUser = async id => {
+  try {
+    const response = await api.get(`/users/${id}/comments`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
 export const createComment = async comment => {
   try {
     const response = await api.post('/comments', comment);

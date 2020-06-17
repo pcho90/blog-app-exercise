@@ -45,14 +45,14 @@ const PostDetail = () => {
     setInput('');
   };
 
+  const fetchData = async () => {
+    const response = await getPost(id);
+    const commentResponse = await getComments(id);
+    setPost(response);
+    setReplies(commentResponse);
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await getPost(id);
-      const commentResponse = await getComments(id);
-      setPost(response);
-      setReplies(commentResponse);
-      console.log(commentResponse);
-    };
     fetchData();
   }, []);
 
@@ -71,12 +71,17 @@ const PostDetail = () => {
               </div>
               <span className='original-content'>{content}</span>
               {currentUser && currentUser.username === post.author && (
-                <button onClick={() => push(`/posts/${id}/edit`)}>Edit</button>
+                <button
+                  className='original-button'
+                  onClick={() => push(`/posts/${id}/edit`)}
+                >
+                  Edit
+                </button>
               )}
             </div>
             <div className='comments'>
               {replies.map((each, idx) => (
-                <Comment key={idx} {...each} />
+                <Comment key={idx} fetchData={fetchData} {...each} />
               ))}
             </div>
           </div>

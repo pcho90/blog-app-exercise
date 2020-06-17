@@ -4,15 +4,25 @@
   width: 100%;
   margin: 30px 0;
   border: 1px solid #dadada;
-  box-shadow: 1px 1px 5px #ccc;
   border-radius: 3px;
-  padding: 20px;
+  padding: 20px 30px;
   overflow-wrap: anywhere;
+  background-color: white;
 }
 
 .content-main {
   width: 100%;
   overflow-wrap: anywhere;
+}
+
+.content-input {
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.content-input:focus {
+  outline: none;
 }
 
 .content-subtitle {

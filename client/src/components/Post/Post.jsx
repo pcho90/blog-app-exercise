@@ -8,17 +8,17 @@ const Post = ({ title, user, content, createdAt, _id, author }) => {
   const { currentUser } = useContext(AuthContext);
 
   return (
-    <div className='post'>
-      <span className='title'>
+    <div className='post-body'>
+      <span className='post-title'>
         <Link to={`/posts/${_id}`}>
-          <h2>{title}</h2>
+          <h3>{title}</h3>
         </Link>
       </span>
-      <div className='subtitle'>
-        <div className='author'>{author}</div>
-        <span className='time'>{createdAt}</span>
+      <div className='post-subtitle'>
+        <div className='post-author'>{author}</div>
+        <span className='post-time'>{createdAt}</span>
       </div>
-      <div className='content'>{content}</div>
+      <div className='post-content'>{content}</div>
     </div>
   );
 };
