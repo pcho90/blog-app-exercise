@@ -2,7 +2,8 @@ import axios from 'axios';
 
 let apiUrl;
 const apiUrls = {
-  production: 'https://infinite-atoll-85496.herokuapp.com/api',
+  production:
+    'https://cors-anywhere.herokuapp.com/https://infinite-atoll-85496.herokuapp.com/api',
   development: 'http://localhost:5000/api'
 };
 
