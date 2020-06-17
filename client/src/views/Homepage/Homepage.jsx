@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { getPosts } from '../../services/posts';
 
+import './Homepage.css';
 import Layout from '../../components/Layout/Layout';
 import Post from '../../components/Post/Post';
 
@@ -18,9 +19,11 @@ const Homepage = () => {
 
   return (
     <Layout>
-      {posts.map((post, idx) => (
-        <Post key={idx} {...post} />
-      ))}
+      <div className='homepage'>
+        {posts.map((post, idx) => (
+          <Post key={idx} {...post} />
+        ))}
+      </div>
     </Layout>
   );
 };

@@ -61,12 +61,12 @@ const PostDetail = () => {
   return (
     <Layout>
       {post && (
-        <div>
+        <div className='post-detail-page'>
           <div className='post-details'>
             <div className='original-post'>
               <span className='original-title'>{title}</span>
               <div className='original-subtitle'>
-                <span>{author}</span>
+                <span className='original-author'>{author}</span>
                 <span>{time}</span>
               </div>
               <span className='original-content'>{content}</span>
@@ -80,14 +80,17 @@ const PostDetail = () => {
               ))}
             </div>
           </div>
-          <div className='comment-form'>
-            {currentUser && (
-              <form onSubmit={handleSubmit}>
-                <textarea rows='10' onChange={handleChange} value={input} />
-                <button>Submit</button>
-              </form>
-            )}
-          </div>
+          {currentUser && (
+            <form className='comment-form' onSubmit={handleSubmit}>
+              <textarea
+                className='comment-textarea'
+                rows='10'
+                onChange={handleChange}
+                value={input}
+              />
+              <button>Submit</button>
+            </form>
+          )}
         </div>
       )}
     </Layout>

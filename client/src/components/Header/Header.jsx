@@ -24,8 +24,10 @@ const Nav = () => {
   return (
     <nav>
       <div className='nav'>
-        <NavLink to='/'>PWOKE.Blog</NavLink>
-        <div className='links'>{links}</div>
+        <NavLink to='/' className='nav-logo'>
+          PWOKE.Blog
+        </NavLink>
+        <div className='nav-links'>{links}</div>
       </div>
     </nav>
   );

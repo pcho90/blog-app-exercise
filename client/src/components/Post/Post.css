@@ -1,20 +1,16 @@
 .post {
   display: flex;
   flex-direction: column;
-  width: 80%;
-}
-
-.title {
-  padding: 10px;
+  width: 60%;
 }
 
 .subtitle {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   width: 100%;
 }
 
 .content {
-  padding: 20px;
+  padding: 20px 0;
+  width: 100%;
 }

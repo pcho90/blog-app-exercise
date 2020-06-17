@@ -6,7 +6,7 @@ const Comment = ({ content, author, createdAt }) => (
   <div className='content'>
     <div className='content-main'>{content}</div>
     <div className='content-subtitle'>
-      <span>{author}</span>
+      <span className='comment-author'>{author}</span>
       <span>{createdAt}</span>
     </div>
   </div>

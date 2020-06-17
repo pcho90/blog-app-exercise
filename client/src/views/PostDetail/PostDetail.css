@@ -1,3 +1,10 @@
+.post-detail-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
 .post-details {
   display: flex;
   flex-direction: column;
@@ -10,8 +17,37 @@
   flex-direction: column;
 }
 
+.original-author {
+  font-weight: 500;
+}
+
 .original-subtitle {
   width: 100%;
+  margin: 5px 0;
   display: flex;
   justify-content: space-between;
+}
+
+.comment-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment-textarea {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.comment-form button {
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  background-color: dodgerblue;
+  margin: 10px 0;
 }
