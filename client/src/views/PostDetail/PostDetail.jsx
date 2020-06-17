@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 import './PostDetail.css';
 
@@ -11,6 +11,7 @@ import Comment from '../../components/Comment/Comment';
 
 const PostDetail = () => {
   const { currentUser } = useContext(AuthContext);
+  const { push } = useHistory();
   const [input, setInput] = useState('');
   const [replies, setReplies] = useState([]);
   const { id } = useParams();
@@ -69,6 +70,9 @@ const PostDetail = () => {
                 <span>{time}</span>
               </div>
               <span className='original-content'>{content}</span>
+              {currentUser && currentUser.username === post.author && (
+                <button onClick={() => push(`/posts/${id}/edit`)}>Edit</button>
+              )}
             </div>
             <div className='comments'>
               {replies.map((each, idx) => (

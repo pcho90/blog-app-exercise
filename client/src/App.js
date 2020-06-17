@@ -21,8 +21,8 @@ const App = () => {
       <>
         <Route path='/create' component={Create} />
         <Route path='/profile' component={Profile} />
+        <Route exact path='/posts/:id' component={PostDetail} />
         <Route path='/posts/:id/edit' component={Edit} />
-        <Route path='/posts/:id' component={PostDetail} />
       </>
     );
   } else {
